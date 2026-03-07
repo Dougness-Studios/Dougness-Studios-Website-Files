@@ -1,3 +1,5 @@
+/* HEADINGS */
+
 h1 {
   font-size: 100px;
   text-align: center;
@@ -13,37 +15,40 @@ h2 {
 body {
   margin: 0;
   font-family: system-ui;
+  padding-top: 80px; /* prevents navbar covering content */
 }
 
 p {
   padding: 20px;
-  clear: both;
 }
 
 /* NAVBAR */
 
 .top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: #FFFF00;
   margin: 0;
   padding: 0;
   list-style: none;
+
+  /* NEW */
+  display: flex;
+  align-items: center;
+
   transition: top 0.3s ease-in-out;
 }
 
-/* clearfix so floats don't break layout */
-.top-nav::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
 .top-nav li {
-  float: left;
   font-size: 20px;
   font-weight: bold;
-  background-color: #FFFF00;
   border-right: 1px solid #bbbbbb;
   position: relative;
+}
+
+.top-nav li:last-child {
+  border-right: none;
 }
 
 .top-nav li a {
@@ -53,17 +58,17 @@ p {
   color: black;
 }
 
-.top-nav li:last-child {
-  border-right: none;
+/* Hover effect */
+
+.top-nav li:hover {
+  background-color: rgb(255, 208, 0);
+  border-radius: 5px;
 }
 
-nav ul li:hover {
-  background-color: rgb(255, 208, 0); /* New background color on hover */
-  border-radius: 5px; /* Optional: rounds the corners */
-}
+/* Hidden navbar (for scroll JS if used) */
 
 .hidden-navbar {
-    top: -100px; /* Moves the navbar off-screen; adjust the value to match your navbar's height */
+  top: -100px;
 }
 
 /* DROPDOWN */
@@ -77,10 +82,13 @@ nav ul li:hover {
   position: absolute;
   top: 100%;
   left: 0;
+
   background-color: #f9f9f9;
   min-width: 300px;
+
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 10;
+
   text-align: center;
 }
 
@@ -95,14 +103,26 @@ nav ul li:hover {
   background-color: #f1f1f1;
 }
 
-/* SHOW DROPDOWN ON HOVER */
+/* SHOW DROPDOWN */
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
 /* LOGO */
 
+.logo {
+  margin-right: auto;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  padding: 5px 12px;
+}
+
 .logo img {
   width: 60px;
   height: 60px;
+  display: block;
 }
