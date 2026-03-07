@@ -63,11 +63,6 @@ h2 {
   background-color: #f1f1f1; /* Optional: hover effect for links */
 }
 
-/* New class added by JavaScript to show the dropdown content */
-.show {
-  display: block;
-}
-
 /* LOGO */
 
 .logo img {
