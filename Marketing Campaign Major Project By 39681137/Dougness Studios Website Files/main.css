@@ -56,6 +56,11 @@ p {
   border-right: none;
 }
 
+nav ul li:hover {
+  background-color: grey; /* New background color on hover */
+  border-radius: 5px; /* Optional: rounds the corners */
+}
+
 /* DROPDOWN */
 
 .dropdown {
