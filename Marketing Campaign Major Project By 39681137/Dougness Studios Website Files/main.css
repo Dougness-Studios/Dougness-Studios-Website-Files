@@ -57,7 +57,7 @@ p {
 }
 
 nav ul li:hover {
-  background-color: grey; /* New background color on hover */
+  background-color: rgb(255, 208, 0); /* New background color on hover */
   border-radius: 5px; /* Optional: rounds the corners */
 }
 
