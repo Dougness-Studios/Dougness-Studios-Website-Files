@@ -27,6 +27,7 @@ p {
   margin: 0;
   padding: 0;
   list-style: none;
+  transition: top 0.3s ease-in-out;
 }
 
 /* clearfix so floats don't break layout */
@@ -59,6 +60,10 @@ p {
 nav ul li:hover {
   background-color: rgb(255, 208, 0); /* New background color on hover */
   border-radius: 5px; /* Optional: rounds the corners */
+}
+
+.hidden-navbar {
+    top: -100px; /* Moves the navbar off-screen; adjust the value to match your navbar's height */
 }
 
 /* DROPDOWN */
