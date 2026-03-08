@@ -16,6 +16,7 @@ body {
   margin: 0;
   font-family: system-ui;
   padding-top: 80px; /* prevents navbar covering content */
+  background-color: #FBEF9C;
 }
 
 p {
