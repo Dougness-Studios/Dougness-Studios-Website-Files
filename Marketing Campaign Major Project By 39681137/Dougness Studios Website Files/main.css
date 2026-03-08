@@ -179,7 +179,7 @@ flex-wrap: wrap;
 .gallery-item {
   border: 1px solid silver;
   margin: auto;
-  width: 200;
+  width: 100;
 }
 
 /* .gallery-item img rule */
