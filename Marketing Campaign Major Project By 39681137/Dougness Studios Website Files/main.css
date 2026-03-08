@@ -168,3 +168,20 @@ textarea {
 .submit-btn:hover {
   background: #0056b3;
 }
+  /* display and flex-wrap */
+.gallery {
+display: flex;
+flex-wrap: wrap;
+}
+
+  /* margin and width */
+.gallery-item {
+  border: 1px solid silver;
+  margin: auto;
+  width: 200;
+}
+
+/* .gallery-item img rule */
+.gallery-item img{
+width: 100;
+}
