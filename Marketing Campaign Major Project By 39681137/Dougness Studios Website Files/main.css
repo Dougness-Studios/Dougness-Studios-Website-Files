@@ -16,7 +16,7 @@ body {
   margin: 0;
   font-family: system-ui;
   padding-top: 80px; /* prevents navbar covering content */
-  background-color: #FBEF9C;
+  background-color: #acb8f4;
 }
 
 p {
@@ -29,7 +29,7 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #FFFF00;
+  background-color: #0044ff;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -62,7 +62,7 @@ p {
 /* Hover effect */
 
 .top-nav li:hover {
-  background-color: rgb(255, 208, 0);
+  background-color: rgb(173, 232, 247);
   border-radius: 5px;
 }
 
