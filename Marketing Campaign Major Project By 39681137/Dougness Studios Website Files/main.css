@@ -65,6 +65,11 @@ p {
   border-radius: 5px;
 }
 
+.top-nav li a:hover {
+  background-color: #0f2a8a; /* darker shade or desired hover color */
+  color: #fff; /* or any color you like */
+}
+
 /* Hidden navbar (for scroll JS if used) */
 
 .hidden-navbar {
