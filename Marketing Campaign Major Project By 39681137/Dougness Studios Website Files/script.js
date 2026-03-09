@@ -1,22 +1,36 @@
 // script.js
-let prevScrollPos = window.pageYOffset;
-const navbar = document.getElementById("navbar");
-// Get the navbar height dynamically
-const navbarHeight = navbar.offsetHeight; 
+document.addEventListener("DOMContentLoaded", function () {
 
-window.addEventListener('scroll', () => {
-    let currentScrollPos = window.pageYOffset;
+    // NAVBAR SHOW/HIDE ON SCROLL
+    let prevScrollPos = window.pageYOffset;
+    const navbar = document.getElementById("navbar");
+    const navbarHeight = navbar.offsetHeight; // dynamic navbar height
 
-    if (prevScrollPos > currentScrollPos) {
-        // Scrolling up - show navbar
-        navbar.classList.remove("navbar-hidden");
-    } else {
-        // Scrolling down - hide navbar, only if scrolled past the navbar height
-        if (currentScrollPos > navbarHeight) {
-           navbar.classList.add("navbar-hidden");
+    window.addEventListener("scroll", () => {
+        const currentScrollPos = window.pageYOffset;
+
+        if (prevScrollPos > currentScrollPos) {
+            // Scrolling up - show navbar
+            navbar.classList.remove("navbar-hidden");
+        } else if (currentScrollPos > navbarHeight) {
+            // Scrolling down past navbar - hide navbar
+            navbar.classList.add("navbar-hidden");
         }
-    }
-    
-    // Update the previous scroll position
-    prevScrollPos = currentScrollPos; 
+
+        prevScrollPos = currentScrollPos;
+    });
+
+    // ACTIVE PAGE DETECTION
+    const links = document.querySelectorAll(".top-nav a");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    links.forEach(link => {
+        const linkPage = link.getAttribute("href");
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active"); // optional: remove active from others
+        }
+    });
+
 });

@@ -59,10 +59,9 @@ p {
   color: black;
 }
 
-/* Hover effect */
-
-.top-nav li:hover {
-  background-color: rgb(173, 232, 247);
+.top-nav li a.active {
+  background-color: #1739b8;
+  color: white;
   border-radius: 5px;
 }
 
