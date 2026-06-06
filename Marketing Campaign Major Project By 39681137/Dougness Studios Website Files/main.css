@@ -173,20 +173,94 @@ textarea {
 .submit-btn:hover {
   background: #0056b3;
 }
-  /* display and flex-wrap */
+
 .gallery {
-display: flex;
-flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
-  /* margin and width */
 .gallery-item {
   border: 1px solid silver;
-  margin: auto;
-  width: 100;
+  width: 250px; /* Gives the card a defined width */
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden; /* This keeps the image rounded if your card has rounded corners */
+  box-sizing: border-box;
 }
 
-/* .gallery-item img rule */
-.gallery-item img{
-width: 100;
+.gallery-item img {
+  width: 100%;  /* Forces the image to stretch/shrink to perfectly fit the 250px card */
+  height: auto; /* Keeps the image from stretching vertically */
+  display: block; 
+}
+
+.gallery-item p {
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    font-family: sans-serif;
+}
+
+.team-card {
+    background: #f4f4f4;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.team-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    background-color: #ddd;
+}
+
+.team-card h3 { 
+    margin: 10px 0; 
+}
+
+.team-card p { 
+    color: #666; 
+    font-size: 0.9em; 
+}
+
+.gallery {
+    display: grid;
+    /* This line makes it responsive automatically */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Ensures images don't stretch */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect: zooms in slightly */
+.gallery-item img:hover {
+    transform: scale(1.05);
 }
