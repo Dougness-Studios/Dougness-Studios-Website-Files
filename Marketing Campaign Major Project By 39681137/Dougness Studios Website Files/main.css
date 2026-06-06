@@ -1,30 +1,40 @@
-/* HEADINGS */
+/* 1. GLOBAL RESETS & BASE STYLES */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  padding-top: 80px; /* prevents navbar covering content */
+  background-color: #acb8f4; /* Light blue background */
+  color: #333333;
+}
+
+/* 2. HEADINGS */
 h1 {
   font-size: 100px;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+  width: 100%; /* Ensures it spans the full screen to center accurately */
 }
 
 h2 {
   font-size: 50px;
   text-align: center;
-}
-
-/* BODY */
-
-body {
-  margin: 0;
-  font-family: system-ui;
-  padding-top: 80px; /* prevents navbar covering content */
-  background-color: #acb8f4;
+  margin-bottom: 15px;
 }
 
 p {
   padding: 20px;
+  color: lightslategray;
 }
 
-/* NAVBAR */
-
+/* 3. NAVBAR */
 .top-nav {
   position: fixed;
   top: 0;
@@ -33,12 +43,10 @@ p {
   margin: 0;
   padding: 0;
   list-style: none;
-
-  /* NEW */
   display: flex;
   align-items: center;
-
   transition: top 0.3s ease-in-out;
+  z-index: 100; /* Keeps navbar above content */
 }
 
 .top-nav li {
@@ -66,18 +74,15 @@ p {
 }
 
 .top-nav li a:hover {
-  background-color: gainsboro; /* darker shade or desired hover color */
-  color: #fff; /* or any color you like */
+  background-color: gainsboro;
+  color: #fff;
 }
-
-/* Hidden navbar (for scroll JS if used) */
 
 .hidden-navbar {
   top: -100px;
 }
 
-/* DROPDOWN */
-
+/* 4. DROPDOWN */
 .dropdown {
   position: relative;
 }
@@ -87,13 +92,10 @@ p {
   position: absolute;
   top: 100%;
   left: 0;
-
   background-color: #f9f9f9;
   min-width: 325px;
-
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 10;
-
   text-align: center;
 }
 
@@ -108,14 +110,11 @@ p {
   background-color: #f1f1f1;
 }
 
-/* SHOW DROPDOWN */
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* LOGO */
-
+/* 5. LOGO */
 .logo {
   margin-right: auto;
 }
@@ -132,6 +131,48 @@ p {
   display: block;
 }
 
+/* 6. HERO SECTION */
+.hero-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(45deg, #1a1a1a, #000);
+  opacity: 0.6;
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.btn {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: white;
+  border: 2px solid #ff4500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #ff4500;
+  box-shadow: 0 0 20px #ff4500;
+}
+
+/* 7. CONTACT FORM */
 .contact-form {
   max-width: 500px;
   margin: auto;
@@ -174,26 +215,31 @@ textarea {
   background: #0056b3;
 }
 
+/* 8. RESPONSIVE GRID GALLERY */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
 }
 
 .gallery-item {
-  border: 1px solid silver;
-  width: 250px; /* Gives the card a defined width */
-  background-color: white;
+  overflow: hidden;
   border-radius: 8px;
-  overflow: hidden; /* This keeps the image rounded if your card has rounded corners */
-  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  background-color: white;
 }
 
 .gallery-item img {
-  width: 100%;  /* Forces the image to stretch/shrink to perfectly fit the 250px card */
-  height: auto; /* Keeps the image from stretching vertically */
-  display: block; 
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
 }
 
 .gallery-item p {
@@ -202,128 +248,43 @@ textarea {
   text-align: center;
 }
 
+/* 9. TEAM SECTION */
 .team-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px;
-    font-family: sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
 }
 
 .team-card {
-    background: #f4f4f4;
-    border-radius: 8px;
-    padding: 20px;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .team-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    background-color: #ddd;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  background-color: #ddd;
 }
 
 .team-card h3 { 
-    margin: 10px 0; 
+  margin: 10px 0; 
 }
 
 .team-card p { 
-    color: #666; 
-    font-size: 0.9em; 
+  color: #666; 
+  font-size: 0.9em; 
 }
 
-.gallery {
-    display: grid;
-    /* This line makes it responsive automatically */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-.gallery-item {
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover; /* Ensures images don't stretch */
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-/* Hover effect: zooms in slightly */
-.gallery-item img:hover {
-    transform: scale(1.05);
-}
-
-/* style.css */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
-
-body { 
-    font-family: 'Segoe UI', sans-serif; 
-    background: #0a0a0a; 
-    color: white; 
-}
-
-.hero-container {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.video-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background: linear-gradient(45deg, #1a1a1a, #000);
-    opacity: 0.6;
-}
-
-.content {
-    position: relative;
-    text-align: center;
-    z-index: 1;
-}
-
-h1 { 
-    font-size: 4rem; 
-    text-transform: uppercase; 
-    letter-spacing: 5px; 
-    margin-bottom: 20px; 
-}
-
-.btn {
-    padding: 15px 40px;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    background: transparent;
-    color: white;
-    border: 2px solid #ff4500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background: #ff4500;
-    box-shadow: 0 0 20px #ff4500;
-}
+/* 10. AFFILIATES */
 .affiliate-container {
   display: flex;
   flex-wrap: wrap;
@@ -367,47 +328,71 @@ h1 {
   background-color: #0056b3;
 }
 
-p {
-  color: lightslategray;
+/* ==========================================================================
+   11. RESPONSIVE MEDIA QUERIES (Device Resizing Rules)
+   ========================================================================== */
+
+/* Tablet Devices (Screens smaller than 992px) */
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 70px; /* Scales down from 100px */
+    letter-spacing: 3px;
+  }
+
+  h2 {
+    font-size: 40px; /* Scales down from 50px */
+  }
+
+  .top-nav li {
+    font-size: 18px; /* Slightly smaller nav text */
+  }
 }
 
-/* --- RESPONSIVE ADJUSTMENTS --- */
+/* Mobile Devices (Screens smaller than 600px) */
+@media screen and (max-width: 600px) {
+  body {
+    padding-top: 70px; /* Adjusts body padding for a slightly shorter mobile navbar */
+  }
 
-/* 1. Mobile & Small Tablet (Below 768px) */
-@media (max-width: 768px) {
-    /* Stack Navigation Vertically */
-    .top-nav {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .top-nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
+  h1 {
+    font-size: 44px; /* Prevents giant text from clipping off mobile screens */
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
 
-    /* Adjust Font Sizes for readability */
-    h1 { font-size: 2.5rem !important; }
-    h2 { font-size: 2rem !important; }
+  h2 {
+    font-size: 32px;
+  }
 
-    /* Make containers full width */
-    .gallery, .team-container, .affiliate-container {
-        grid-template-columns: 1fr; /* 1 column on phones */
-    }
-}
+  p {
+    padding: 15px; /* Tighter padding for smaller screens */
+  }
 
-/* 2. Tablet & Medium Screens (769px to 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .gallery, .team-container, .affiliate-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
-    }
-}
+  /* Hero Section Mobile Adjustments */
+  .hero-container {
+    height: 80vh; /* Prevents the hero section from feeling too stretched on mobile */
+  }
 
-/* 3. Widescreen Desktop (Above 1024px) */
-@media (min-width: 1025px) {
-    .gallery, .team-container, .affiliate-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+  .btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+  /* Team & Affiliate Layouts on small screens */
+  .team-container, 
+  .affiliate-container {
+    padding: 20px 10px;
+    gap: 15px;
+  }
+
+  .team-card,
+  .affiliate-card {
+    width: 100%; /* Allows cards to scale beautifully on narrow screens */
+    max-width: 340px; /* Keeps them from getting stretched too wide */
+  }
+
+  /* Contact Form Adjustments */
+  .contact-form {
+    padding: 0 15px;
+  }
 }
