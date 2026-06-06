@@ -370,3 +370,44 @@ h1 {
 p {
   color: lightslategray;
 }
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* 1. Mobile & Small Tablet (Below 768px) */
+@media (max-width: 768px) {
+    /* Stack Navigation Vertically */
+    .top-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .top-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Adjust Font Sizes for readability */
+    h1 { font-size: 2.5rem !important; }
+    h2 { font-size: 2rem !important; }
+
+    /* Make containers full width */
+    .gallery, .team-container, .affiliate-container {
+        grid-template-columns: 1fr; /* 1 column on phones */
+    }
+}
+
+/* 2. Tablet & Medium Screens (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .gallery, .team-container, .affiliate-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+/* 3. Widescreen Desktop (Above 1024px) */
+@media (min-width: 1025px) {
+    .gallery, .team-container, .affiliate-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
