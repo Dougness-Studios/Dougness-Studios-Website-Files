@@ -1,53 +1,47 @@
 <!DOCTYPE html>
-<html lang="en-GB"> 
-<script src="script.js"></script>
-
-<nav id="navbar">
-<ul class="top-nav">
-
-<li class="logo">
-<a href="index.html">
-<img src="DOUGNESS-STUDIOS-LOGO.png" alt="logo button">
-</a>
-</li>
-
-<li><a href="Our-Teams.html">Our Teams</a></li>
-<li><a href="Contact.html">Contact</a></li>
-<li><a href="Affiliates.html">Affiliates</a></li>
-
-<li class="dropdown">
-<a href="#">Video Review &#38; Photo Gallery</a>
-
-<div class="dropdown-content">
-<a href="videoreview.html">Video Review</a>
-<a href="photogallery.html">Photo Gallery</a>
-</div>
-
-</li>
-
-</ul>
-</nav>
-
-<h1>Dougness Studios</h1>
-<h2>Photo Gallery</h2>
-
+<html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dougness Studios</title>
-<link href="main.css" rel="stylesheet" type="text/css">
-<script src="script.js"defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dougness Studios - Photo Gallery</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-    <div class="gallery">
-        <div class="gallery-item"><img src="photo1.jpg" alt="Description 1"></div>
-        <div class="gallery-item"><img src="photo2.jpg" alt="Description 2"></div>
-        <div class="gallery-item"><img src="photo3.jpg" alt="Description 3"></div>
-        <div class="gallery-item"><img src="photo4.jpg" alt="Description 4"></div>
-        <div class="gallery-item"><img src="photo5.jpg" alt="Description 5"></div>
-        <div class="gallery-item"><img src="photo6.jpg" alt="Description 6"></div>
-    </div>
+    <nav id="navbar">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo"><img src="DOUGNESS-STUDIOS-LOGO.png" alt="logo button"></a>
+            <button id="menu-toggle">MENU</button>
+            <ul class="top-nav" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Our-Teams.html">Our Teams</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Affiliates.html">Affiliates</a></li>
+                <li class="dropdown">
+                    <a href="#">Video Review & Photo Gallery</a>
+                    <div class="dropdown-content">
+                        <a href="videoreview.html">Video Review</a>
+                        <a href="photogallery.html">Photo Gallery</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        <h1>Dougness Studios</h1>
+        <h2>Photo Gallery</h2>
+
+        <div class="gallery">
+            <div class="gallery-item"><img src="photo1.jpg" alt="Description 1"></div>
+            <div class="gallery-item"><img src="photo2.jpg" alt="Description 2"></div>
+            <div class="gallery-item"><img src="photo3.jpg" alt="Description 3"></div>
+            <div class="gallery-item"><img src="photo4.jpg" alt="Description 4"></div>
+            <div class="gallery-item"><img src="photo5.jpg" alt="Description 5"></div>
+            <div class="gallery-item"><img src="photo6.jpg" alt="Description 6"></div>
+        </div>
+    </main>
 
 </body>
 </html>

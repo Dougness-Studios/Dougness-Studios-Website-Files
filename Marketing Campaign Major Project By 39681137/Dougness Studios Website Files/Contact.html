@@ -1,82 +1,59 @@
 <!DOCTYPE html>
-<html lang="en-GB"> 
-<script src="script.js"></script>
-
-<nav id="navbar">
-<ul class="top-nav">
-
-<li class="logo">
-<a href="index.html">
-<img src="DOUGNESS-STUDIOS-LOGO.png" alt="logo button">
-</a>
-</li>
-
-<li><a href="Our-Teams.html">Our Teams</a></li>
-<li><a href="Contact.html">Contact</a></li>
-<li><a href="Affiliates.html">Affiliates</a></li>
-
-<li class="dropdown">
-<a href="#">Video Review &#38; Photo Gallery</a>
-
-<div class="dropdown-content">
-<a href="videoreview.html">Video Review</a>
-<a href="photogallery.html">Photo Gallery</a>
-</div>
-
-</li>
-
-</ul>
-</nav>
-
-<h1>Dougness Studios</h1>
-<h2>Contact</h2>
-
+<html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dougness Studios</title>
-<link href="main.css" rel="stylesheet" type="text/css">
-<script src="script.js"defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dougness Studios - Contact</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <script src="script.js" defer></script>
 </head>
+<body>
 
-<form action="contact.php" method="POST" class="contact-form">
+    <!-- Navigation integrated with mobile menu logic -->
+    <nav id="navbar">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo"><img src="DOUGNESS-STUDIOS-LOGO.png" alt="logo button"></a>
+            <button id="menu-toggle">MENU</button>
+            <ul class="top-nav" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Our-Teams.html">Our Teams</a></li>
+                <li><a href="Contact.html" class="active">Contact</a></li>
+                <li><a href="Affiliates.html">Affiliates</a></li>
+                <li class="dropdown">
+                    <a href="#">Video Review & Photo Gallery</a>
+                    <div class="dropdown-content">
+                        <a href="videoreview.html">Video Review</a>
+                        <a href="photogallery.html">Photo Gallery</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-  <div class="form-group">
-    <label for="name">Full Name</label>
-    <input 
-      type="text" 
-      id="name" 
-      name="name" 
-      placeholder="Enter your full name" 
-      required
-    >
-  </div>
+    <!-- Main content area ensures form is below the fixed navbar -->
+    <main class="page-container" style="padding-top: 40px;">
+        <h1>Dougness Studios</h1>
+        <h2>Contact</h2>
 
-  <div class="form-group">
-    <label for="email">Email Address</label>
-    <input 
-      type="email" 
-      id="email" 
-      name="email" 
-      placeholder="Enter your email address" 
-      required
-    >
-  </div>
+        <form action="contact.php" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
 
-  <div class="form-group">
-    <label for="message">Your Message</label>
-    <textarea 
-      id="message" 
-      name="message" 
-      rows="5"
-      placeholder="Write your message here..."
-      required
-    ></textarea>
-  </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
 
-  <button type="submit" class="submit-btn">
-    Send Message
-  </button>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            </div>
 
-</form>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </main>
+
+</body>
 </html>

@@ -1,398 +1,49 @@
-/* 1. GLOBAL RESETS & BASE STYLES */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* 1. Base Styles & Typography */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: #acb8f4; padding-top: 100px; }
+
+h1, h2 { text-align: center; width: 100%; margin-bottom: 0.5rem; color: #333; }
+h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4rem); line-height: 1.2; }
+h2 { font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem); margin-bottom: 2rem; }
+
+/* 2. Navbar Setup */
+#navbar { position: fixed; top: 0; width: 100%; z-index: 1000; background-color: gray; transition: top 0.3s ease; }
+.nav-wrapper { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 80px; }
+.logo img { width: 60px; height: 60px; }
+#menu-toggle { display: none; padding: 10px; cursor: pointer; border: none; background: #555; color: white; border-radius: 4px; }
+
+/* 3. Navigation Links */
+.top-nav { display: flex; list-style: none; }
+.top-nav li { font-size: 18px; font-weight: bold; position: relative; }
+.top-nav a { display: block; padding: 15px 20px; text-decoration: none; color: black; white-space: nowrap; }
+.top-nav a:hover, .top-nav a.active { background-color: gainsboro; }
+
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #f9f9f9; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1; }
+.dropdown:hover .dropdown-content { display: block; }
+
+/* 4. Page Layouts & Grids */
+.page-container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.team-container, .gallery, .affiliate-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; padding: 30px 0; }
+.card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); transition: all 0.3s cubic-bezier(0.4,0,0.2,1); text-align: center; }
+.card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+.card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; display: block; margin-bottom: 15px; }
+
+/* 5. Contact Form */
+.contact-form { max-width: 600px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.form-group { margin-bottom: 15px; }
+.form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+.submit-btn { width: 100%; padding: 12px; background-color: #555; color: white; border: none; border-radius: 4px; cursor: pointer; }
+
+/* 6. Mobile Logic (Isolated) */
+@media (max-width: 768px) {
+    #menu-toggle { display: block; }
+    #nav-links { display: none !important; flex-direction: column !important; width: 100% !important; position: absolute !important; top: 80px !important; left: 0 !important; background: gray !important; }
+    #nav-links.active { display: flex !important; }
+    .top-nav { flex-direction: column !important; width: 100%; }
+    .top-nav li { width: 100%; text-align: center; border-top: 1px solid #777; }
+    .dropdown-content { position: relative; width: 100%; background: #ddd; }
 }
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  padding-top: 80px; /* prevents navbar covering content */
-  background-color: #acb8f4; /* Light blue background */
-  color: #333333;
-}
-
-/* 2. HEADINGS */
-h1 {
-  font-size: 100px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  margin-bottom: 20px;
-  width: 100%; /* Ensures it spans the full screen to center accurately */
-}
-
-h2 {
-  font-size: 50px;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-p {
-  padding: 20px;
-  color: lightslategray;
-}
-
-/* 3. NAVBAR */
-.top-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: gray;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  transition: top 0.3s ease-in-out;
-  z-index: 100; /* Keeps navbar above content */
-}
-
-.top-nav li {
-  font-size: 20px;
-  font-weight: bold;
-  border-right: 1px solid #bbbbbb;
-  position: relative;
-}
-
-.top-nav li:last-child {
-  border-right: none;
-}
-
-.top-nav li a {
-  display: block;
-  padding: 14px 16px;
-  text-decoration: none;
-  color: black;
-}
-
-.top-nav li a.active {
-  background-color: lightgray;
-  color: white;
-  border-radius: 5px;
-}
-
-.top-nav li a:hover {
-  background-color: gainsboro;
-  color: #fff;
-}
-
-.hidden-navbar {
-  top: -100px;
-}
-
-/* 4. DROPDOWN */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #f9f9f9;
-  min-width: 325px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 10;
-  text-align: center;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 10px 15px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* 5. LOGO */
-.logo {
-  margin-right: auto;
-}
-
-.logo a {
-  display: flex;
-  align-items: center;
-  padding: 5px 12px;
-}
-
-.logo img {
-  width: 60px;
-  height: 60px;
-  display: block;
-}
-
-/* 6. HERO SECTION */
-.hero-container {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.video-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: linear-gradient(45deg, #1a1a1a, #000);
-  opacity: 0.6;
-}
-
-.content {
-  position: relative;
-  text-align: center;
-  z-index: 1;
-}
-
-.btn {
-  padding: 15px 40px;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  background: transparent;
-  color: white;
-  border: 2px solid #ff4500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background: #ff4500;
-  box-shadow: 0 0 20px #ff4500;
-}
-
-/* 7. CONTACT FORM */
-.contact-form {
-  max-width: 500px;
-  margin: auto;
-  font-family: Arial, sans-serif;
-}
-
-.form-group {
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-input, textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.submit-btn {
-  background: #007BFF;
-  color: white;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.submit-btn:hover {
-  background: #0056b3;
-}
-
-/* 8. RESPONSIVE GRID GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  padding: 20px;
-}
-
-.gallery-item {
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  background-color: white;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.gallery-item img:hover {
-  transform: scale(1.05);
-}
-
-.gallery-item p {
-  margin: 0;
-  padding: 15px;
-  text-align: center;
-}
-
-/* 9. TEAM SECTION */
-.team-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px;
-}
-
-.team-card {
-  background: #f4f4f4;
-  border-radius: 8px;
-  padding: 20px;
-  width: 250px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.team-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  background-color: #ddd;
-}
-
-.team-card h3 { 
-  margin: 10px 0; 
-}
-
-.team-card p { 
-  color: #666; 
-  font-size: 0.9em; 
-}
-
-/* 10. AFFILIATES */
-.affiliate-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-}
-
-.affiliate-card {
-  width: 300px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 16px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.affiliate-card:hover {
-  transform: translateY(-5px);
-}
-
-.affiliate-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.affiliate-btn {
-  display: inline-block;
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-.affiliate-btn:hover {
-  background-color: #0056b3;
-}
-
-/* ==========================================================================
-   11. RESPONSIVE MEDIA QUERIES (Device Resizing Rules)
-   ========================================================================== */
-
-/* Tablet Devices (Screens smaller than 992px) */
-@media screen and (max-width: 992px) {
-  h1 {
-    font-size: 70px; /* Scales down from 100px */
-    letter-spacing: 3px;
-  }
-
-  h2 {
-    font-size: 40px; /* Scales down from 50px */
-  }
-
-  .top-nav li {
-    font-size: 18px; /* Slightly smaller nav text */
-  }
-}
-
-/* Mobile Devices (Screens smaller than 600px) */
-@media screen and (max-width: 600px) {
-  body {
-    padding-top: 70px; /* Adjusts body padding for a slightly shorter mobile navbar */
-  }
-
-  h1 {
-    font-size: 44px; /* Prevents giant text from clipping off mobile screens */
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-  }
-
-  h2 {
-    font-size: 32px;
-  }
-
-  p {
-    padding: 15px; /* Tighter padding for smaller screens */
-  }
-
-  /* Hero Section Mobile Adjustments */
-  .hero-container {
-    height: 80vh; /* Prevents the hero section from feeling too stretched on mobile */
-  }
-
-  .btn {
-    padding: 12px 30px;
-    font-size: 1rem;
-  }
-
-  /* Team & Affiliate Layouts on small screens */
-  .team-container, 
-  .affiliate-container {
-    padding: 20px 10px;
-    gap: 15px;
-  }
-
-  .team-card,
-  .affiliate-card {
-    width: 100%; /* Allows cards to scale beautifully on narrow screens */
-    max-width: 340px; /* Keeps them from getting stretched too wide */
-  }
-
-  /* Contact Form Adjustments */
-  .contact-form {
-    padding: 0 15px;
-  }
+@media (min-width: 769px) {
+    #nav-links { display: flex !important; flex-direction: row !important; position: static !important; background: transparent !important; }
 }

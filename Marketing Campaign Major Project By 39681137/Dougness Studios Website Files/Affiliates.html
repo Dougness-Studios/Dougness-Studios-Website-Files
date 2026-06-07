@@ -1,62 +1,54 @@
 <!DOCTYPE html>
-<html lang="en-GB"> 
-<script src="script.js"></script>
-
-<nav id="navbar">
-<ul class="top-nav">
-
-<li class="logo">
-<a href="index.html">
-<img src="DOUGNESS-STUDIOS-LOGO.png" alt="logo button">
-</a>
-</li>
-
-<li><a href="Our-Teams.html">Our Teams</a></li>
-<li><a href="Contact.html">Contact</a></li>
-<li><a href="Affiliates.html">Affiliates</a></li>
-
-<li class="dropdown">
-<a href="#">Video Review &#38; Photo Gallery</a>
-
-<div class="dropdown-content">
-<a href="videoreview.html">Video Review</a>
-<a href="photogallery.html">Photo Gallery</a>
-</div>
-
-</li>
-
-</ul>
-</nav>
-
-<h1>Dougness Studios</h1>
-<h2>Affiliates</h2>
-
+<html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dougness Studios</title>
-<link href="main.css" rel="stylesheet" type="text/css">
-<script src="script.js"defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dougness Studios - Affiliates</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-<div class="affiliate-container">
-  <div class="affiliate-card">
-    <img src="product-image.jpg" alt="Darell Studio">
-    <h3>Darell Studio</h3>
-    <p>Brief, compelling description of the product or service goes here to encourage clicks.</p>
-    <a href="YOUR_AFFILIATE_LINK" class="affiliate-btn" target="_blank" rel="nofollow">Find Out More</a>
-  </div>
 
-  </div>
- <div class="affiliate-container">
-  <div class="affiliate-card">
-    <img src="product-image.jpg" alt="Barbell Studio">
-    <h3>Barbell Studio</h3>
-    <p>Brief, compelling description of the product or service goes here to encourage clicks.</p>
-    <a href="YOUR_AFFILIATE_LINK" class="affiliate-btn" target="_blank" rel="nofollow">Find Out More</a>
-  </div>
+    <nav id="navbar">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo"><img src="DOUGNESS-STUDIOS-LOGO.png" alt="logo button"></a>
+            <button id="menu-toggle">MENU</button>
+            <ul class="top-nav" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Our-Teams.html">Our Teams</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Affiliates.html" class="active">Affiliates</a></li>
+                <li class="dropdown">
+                    <a href="#">Video Review & Photo Gallery</a>
+                    <div class="dropdown-content">
+                        <a href="videoreview.html">Video Review</a>
+                        <a href="photogallery.html">Photo Gallery</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-  </div>
+    <main class="page-container">
+        <h1>Dougness Studios</h1>
+        <h2>Affiliates</h2>
+
+        <section class="affiliate-container">
+            <div class="affiliate-card">
+                <img src="product-image.jpg" alt="Darell Studio">
+                <h3>Darell Studio</h3>
+                <p>Brief, compelling description of the product or service goes here to encourage clicks.</p>
+                <a href="YOUR_AFFILIATE_LINK" class="affiliate-btn" target="_blank" rel="nofollow">Find Out More</a>
+            </div>
+
+            <div class="affiliate-card">
+                <img src="product-image.jpg" alt="Barbell Studio">
+                <h3>Barbell Studio</h3>
+                <p>Brief, compelling description of the product or service goes here to encourage clicks.</p>
+                <a href="YOUR_AFFILIATE_LINK" class="affiliate-btn" target="_blank" rel="nofollow">Find Out More</a>
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>

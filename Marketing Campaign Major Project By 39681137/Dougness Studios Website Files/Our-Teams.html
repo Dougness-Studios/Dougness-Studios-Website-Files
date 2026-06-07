@@ -1,102 +1,49 @@
 <!DOCTYPE html>
-<html lang="en-GB"> 
-<script src="script.js"></script>
-
-<nav id="navbar">
-<ul class="top-nav">
-
-<li class="logo">
-<a href="index.html">
-<img src="DOUGNESS-STUDIOS-LOGO.png" alt="logo button">
-</a>
-</li>
-
-<li><a href="Our-Teams.html">Our Teams</a></li>
-<li><a href="Contact.html">Contact</a></li>
-<li><a href="Affiliates.html">Affiliates</a></li>
-
-<li class="dropdown">
-<a href="#">Video Review &#38; Photo Gallery</a>
-
-<div class="dropdown-content">
-<a href="videoreview.html">Video Review</a>
-<a href="photogallery.html">Photo Gallery</a>
-</div>
-
-</li>
-
-</ul>
-</nav>
-
-<h1>Dougness Studios</h1>
-<h2>Our Teams</h2>
-
+<html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dougness Studios</title>
-<link href="main.css" rel="stylesheet" type="text/css">
-<script src="script.js"defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dougness Studios - Our Teams</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
 
-<section class="team-container">
-    <div class="team-card">
-        <img src="avatar1.jpg" alt="Team Member">
-        <h3>John Doe</h3>
-        <p>CEO & Mastermind</p>
-    </div>
+    <nav id="navbar">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo"><img src="DOUGNESS-STUDIOS-LOGO.png" alt="logo"></a>
+            <button id="menu-toggle">MENU</button>
+            <ul class="top-nav" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Our-Teams.html" class="active-page">Our Teams</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Affiliates.html">Affiliates</a></li>
+                <li class="dropdown">
+                    <a href="#">Video Review & Photo Gallery</a>
+                    <div class="dropdown-content">
+                        <a href="videoreview.html">Video Review</a>
+                        <a href="photogallery.html">Photo Gallery</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="team-card">
-        <img src="avatar3.jpg" alt="Team Member">
-        <h3>Anderson Pol</h3>
-        <p>Co Founder</p>
-    </div>
+    <main class="content page-container">
+        <h1>Dougness Studios</h1>
+        <h2>Our Teams</h2>
 
-    <div class="team-card">
-        <img src="avatar2.jpg" alt="Team Member">
-        <h3>John Smith</h3>
-        <p>Lead Developer</p>
-    </div>
-
-    <div class="team-card">
-        <img src="avatar3.jpg" alt="Team Member">
-        <h3>Alice Johnson</h3>
-        <p>Head Of Graphical Design</p>
-    </div>
-
-    <div class="team-card">
-        <img src="avatar3.jpg" alt="Team Member">
-        <h3>Alice Johnson</h3>
-        <p>Graphic Designer</p>
-    </div>
-
-    <div class="team-card">
-        <img src="avatar3.jpg" alt="Team Member">
-        <h3>Alexander Jax</h3>
-        <p>Website Designer</p>
-    </div>
-
-    <div class="team-card">
-        <img src="avatar3.jpg" alt="Team Member">
-        <h3>Mark Johnson</h3>
-        <p>Head Of Website Operations</p>
-    </div>
-
-    <div class="team-card">
-        <img src="avatar3.jpg" alt="Team Member">
-        <h3>Zanther Valos</h3>
-        <p>Head Of Game Development</p>
-    </div>
-
-    <div class="team-card">
-        <img src="avatar3.jpg" alt="Team Member">
-        <h3>Cassie Zhu</h3>
-        <p>Game Developer</p>
-    </div>
-</section>
-
+        <section class="team-container">
+            <div class="team-card"><img src="avatar1.jpg" alt="Team Member"><h3>John Doe</h3><p>CEO & Mastermind</p></div>
+            <div class="team-card"><img src="avatar3.jpg" alt="Team Member"><h3>Anderson Pol</h3><p>Co Founder</p></div>
+            <div class="team-card"><img src="avatar2.jpg" alt="Team Member"><h3>John Smith</h3><p>Lead Developer</p></div>
+            <div class="team-card"><img src="avatar3.jpg" alt="Team Member"><h3>Alice Johnson</h3><p>Head Of Graphical Design</p></div>
+            <div class="team-card"><img src="avatar3.jpg" alt="Team Member"><h3>Alice Johnson</h3><p>Graphic Designer</p></div>
+            <div class="team-card"><img src="avatar3.jpg" alt="Team Member"><h3>Alexander Jax</h3><p>Website Designer</p></div>
+            <div class="team-card"><img src="avatar3.jpg" alt="Team Member"><h3>Mark Johnson</h3><p>Head Of Website Operations</p></div>
+            <div class="team-card"><img src="avatar3.jpg" alt="Team Member"><h3>Zanther Valos</h3><p>Head Of Game Development</p></div>
+            <div class="team-card"><img src="avatar3.jpg" alt="Team Member"><h3>Cassie Zhu</h3><p>Game Developer</p></div>
+        </section>
+    </main>
 </body>
-
 </html>

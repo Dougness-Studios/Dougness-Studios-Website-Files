@@ -1,63 +1,48 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-<script src="script.js"></script>
-
-<nav id="navbar">
-<ul class="top-nav">
-
-<li class="logo">
-<a href="index.html">
-<img src="DOUGNESS-STUDIOS-LOGO.png" alt="logo button">
-</a>
-</li>
-
-<li><a href="Our-Teams.html">Our Teams</a></li>
-<li><a href="Contact.html">Contact</a></li>
-<li><a href="Affiliates.html">Affiliates</a></li>
-
-<li class="dropdown">
-<a href="#">Video Review &#38; Photo Gallery</a>
-
-<div class="dropdown-content">
-<a href="videoreview.html">Video Review</a>
-<a href="photogallery.html">Photo Gallery</a>
-</div>
-
-</li>
-
-</ul>
-</nav>
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dougness Studios</title>
-<link href="main.css" rel="stylesheet" type="text/css">
-<script src="script.js"defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dougness Studios</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
 
-<h1>Dougness Studios</h1>
-<h2>'A Land Like No Other'</h2>
+<nav id="navbar">
+    <div class="nav-wrapper">
+        <a href="index.html" class="logo">
+            <img src="DOUGNESS-STUDIOS-LOGO.png" alt="Dougness Studios Logo">
+        </a>
+        
+        <button id="menu-toggle" aria-label="Toggle navigation menu">MENU</button>
+        
+        <ul class="top-nav" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Our-Teams.html">Our Teams</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Affiliates.html">Affiliates</a></li>
+            <li class="dropdown">
+                <a href="#">Video Review & Photo Gallery</a>
+                <div class="dropdown-content">
+                    <a href="videoreview.html">Video Review</a>
+                    <a href="photogallery.html">Photo Gallery</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
 
+<main class="content">
+    <h1>Dougness Studios</h1>
+    <h2>'A Land Like No Other'</h2>
+    <p>A Land Like No Other is an adventurous video game that is made to appeal to those who may enjoy CRPG [Computer Role Playing Games]. Specifically that of Baldur's Gate 3.</p>
 
-<p>
-A Land Like No Other is an adventurous video game that is made to appeal to those who may enjoy CRPG 
-[Computer Role Playing Games]. Specifically that of Baldur's Gate 3. The elements utilised will be 
-the medieval style such as the point to click mechanisms and other golden elements such as functions.
-</p>
+    <div class="gallery">
+        <div class="gallery-item"><img src="https://picsum.photos/300/200" alt="Game Screenshot 1"></div>
+        <div class="gallery-item"><img src="https://picsum.photos/300/200?random=1" alt="Game Screenshot 2"></div>
+    </div>
+</main>
 
-<div class="gallery">
-  <div class="gallery-item">
-    <img src="https://picsum.photos/300/200" alt="Placeholder Game 1">
-    <p>Placeholder</p>
-  </div>
-  <div class="gallery-item">
-    <img src="https://picsum.photos/300/200?random=1" alt="Placeholder Game 2">
-    <p>Placeholder</p>
-  </div>
-</div>
-
+<script src="script.js" defer></script>
 </body>
 </html>

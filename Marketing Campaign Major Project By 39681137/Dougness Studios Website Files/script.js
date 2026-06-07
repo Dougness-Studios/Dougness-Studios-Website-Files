@@ -1,36 +1,42 @@
 // script.js
 document.addEventListener("DOMContentLoaded", function () {
 
-    // NAVBAR SHOW/HIDE ON SCROLL
+    // --- 1. NAVBAR SHOW/HIDE ON SCROLL ---
     let prevScrollPos = window.pageYOffset;
     const navbar = document.getElementById("navbar");
-    const navbarHeight = navbar.offsetHeight; // dynamic navbar height
+    // Ensure navbar exists before accessing offsetHeight
+    if (navbar) {
+        const navbarHeight = navbar.offsetHeight;
 
-    window.addEventListener("scroll", () => {
-        const currentScrollPos = window.pageYOffset;
+        window.addEventListener("scroll", () => {
+            const currentScrollPos = window.pageYOffset;
+            if (prevScrollPos > currentScrollPos) {
+                navbar.style.top = "0"; // Show
+            } else if (currentScrollPos > navbarHeight) {
+                navbar.style.top = "-80px"; // Hide
+            }
+            prevScrollPos = currentScrollPos;
+        });
+    }
 
-        if (prevScrollPos > currentScrollPos) {
-            // Scrolling up - show navbar
-            navbar.classList.remove("navbar-hidden");
-        } else if (currentScrollPos > navbarHeight) {
-            // Scrolling down past navbar - hide navbar
-            navbar.classList.add("navbar-hidden");
-        }
-
-        prevScrollPos = currentScrollPos;
-    });
-
-    // ACTIVE PAGE DETECTION
+    // --- 2. ACTIVE PAGE DETECTION ---
     const links = document.querySelectorAll(".top-nav a");
     const currentPage = window.location.pathname.split("/").pop();
 
     links.forEach(link => {
-        const linkPage = link.getAttribute("href");
-        if (linkPage === currentPage) {
-            link.classList.add("active");
-        } else {
-            link.classList.remove("active"); // optional: remove active from others
+        // Ensure link attributes match the current page
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active"); // Changed to 'active' to match CSS
         }
     });
+    
+    // --- 3. MOBILE MENU TOGGLE ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
 
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
 });
