@@ -17,61 +17,175 @@ h2 { font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem); margin-bottom: 2rem; }
 .top-nav li { font-size: 18px; font-weight: bold; position: relative; }
 .top-nav a { display: block; padding: 15px 20px; text-decoration: none; color: black; white-space: nowrap; }
 .top-nav a:hover, .top-nav a.active { background-color: gainsboro; }
-
 .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #f9f9f9; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1; }
 .dropdown:hover .dropdown-content { display: block; }
 
-/* 4 & 5. Consolidated Layout & Contact Form */
-.page-container { 
-    max-width: 1100px; 
-    margin: 0 auto; 
-    padding: 100px 20px 40px 20px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+/* 4. Modular Layouts (Teams, Affiliates, Showcase) */
+
+/* Teams Page */
+.team-container { 
+    display: grid !important; 
+    /* Ensures cards are between 250px and 300px wide and centers them */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px)) !important; 
+    gap: 30px !important; 
+    width: 100% !important; 
+    justify-content: center !important; 
+    padding: 30px 20px !important; 
 }
 
-.contact-form { 
-    width: 100%; 
-    max-width: 450px; 
+/* Individual Team Card */
+.team-card { 
     background: #fff; 
-    padding: 30px; 
-    border-radius: 4px; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-    text-align: left; 
+    padding: 25px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    text-align: center; 
+    width: 100% !important; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Circular Team Image */
+.team-card img { 
+    display: block !important; 
+    width: 100px !important; 
+    height: 100px !important; 
+    border-radius: 50% !important; 
+    object-fit: cover; 
+    margin: 0 auto 15px auto; 
+}
+
+/* Affiliates Page */.affiliate-container { 
+    display: grid !important; 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important; 
+    gap: 40px !important; 
+    width: 100% !important; 
+    max-width: 1200px; /* Limits how wide the grid can get */
+    margin: 0 auto;    /* Centers the entire grid on the page */
+    padding: 30px 20px !important; 
+}
+
+.affiliate-card { 
+    background: #fff; 
+    padding: 25px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    text-align: center;
+    width: 100%; /* Forces the card to fill the grid cell */
+}
+
+.affiliate-card img { 
+    display: block !important; 
+    width: 100% !important; 
+    height: 200px !important; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin-bottom: 15px; 
+}
+
+.gallery { 
+    display: grid !important; 
+    /* Keeps images at a consistent size between 250px and 350px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px)) !important; 
+    gap: 20px !important; 
+    width: 100% !important; 
+    justify-content: center !important; /* Centers the whole gallery */
+    padding: 30px 20px !important; 
+}
+
+.photo-card { 
+    background: #fff; 
+    padding: 10px; /* Slim padding for a gallery look */
+    border-radius: 4px; /* Slight rounding for a clean look */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures image doesn't bleed out of rounded corners */
+}
+
+/* Image Inside Gallery */
+.photo-card img { 
+    display: block !important; 
+    width: 100% !important; 
+    height: 250px !important; /* Fixed height for consistent rows */
+    object-fit: cover; /* Keeps images from looking squashed/stretched */
+    border-radius: 2px; 
+}
+
+/* 1. Section container for layout */
+.video-review-section {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* 2. The Hero Container (The Stage) */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Adjust height as needed */
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px;
+    /* Adding the background image here */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('YOUR_IMAGE_PATH_HERE.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 3. The Content (Text & Button) */
+.content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* 4. The Enticing Button */
+.btn {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background-color: #1c65d6;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+    background-color: #1551ad;
+    transform: scale(1.05); /* Slight pop effect */
+}
+
+/* Showcase Page */
+.project-showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; width: 100%; padding: 30px 0; }
+.showcase-item { background: #fff; padding: 10px; border-radius: 0; }
+.showcase-item img { display: block; width: 100%; height: auto; border-radius: 0; }
+
+/* 5. Contact Styles */
+.contact-wrapper { display: flex; flex-direction: column; align-items: center; }
+.contact-form { width: 100%; max-width: 450px; background: #fff; padding: 30px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 .form-group { margin-bottom: 15px; }
-
-.form-group input, .form-group textarea { 
-    width: 100%; 
-    padding: 12px; 
-    border: 1px solid #ced4da; 
-    border-radius: 2px; 
-    font-size: 1rem;
-    color: #495057;
-}
-
-.submit-btn { 
-    display: block;
-    width: 30%; 
-    margin: 20px auto 0 auto; 
-    padding: 12px; 
-    background-color: #1c65d6; 
-    color: white; 
-    border: none; 
-    border-radius: 2px; 
-    font-size: 0.9rem; 
-    font-weight: bold; 
-    cursor: pointer; 
-    transition: background 0.3s;
-}
-
-.submit-btn:hover { background-color: #1551ad; }
+.form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 2px; }
+.submit-btn { display: block; width: 30%; margin: 20px auto 0; padding: 12px; background-color: #1c65d6; color: white; border: none; cursor: pointer; }
 
 /* 6. Mobile Logic */
 @media (max-width: 768px) {
     #menu-toggle { display: block; }
-    #nav-links { display: none !important; flex-direction: column !important; width: 100% !important; position: absolute !important; top: 80px !important; left: 0 !important; background: gray !important; }
+    #nav-links { display: none !important; flex-direction: column; width: 100%; position: absolute; top: 80px; left: 0; background: gray; }
     #nav-links.active { display: flex !important; }
 }
