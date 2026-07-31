@@ -2,7 +2,7 @@
 // 1. Define connection variables
 $host     = 'sql305.infinityfree.com'; 
 $port     = '3306'; // Default MySQL port is 3306
-$dbname   = 'if0_41924791_XXX';
+$dbname   = 'if0_41924791_main';
 $username = 'if0_41924791';
 $password = 'dj9ErQ6nWFbu';
 $charset  = 'utf8mb4';
