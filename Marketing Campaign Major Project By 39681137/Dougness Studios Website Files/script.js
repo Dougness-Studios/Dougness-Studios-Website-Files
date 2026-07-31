@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- 1. NAVBAR SHOW/HIDE ON SCROLL ---
     let prevScrollPos = window.pageYOffset;
     const navbar = document.getElementById("navbar");
-    // Ensure navbar exists before accessing offsetHeight
     if (navbar) {
         const navbarHeight = navbar.offsetHeight;
 
@@ -24,9 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentPage = window.location.pathname.split("/").pop();
 
     links.forEach(link => {
-        // Ensure link attributes match the current page
         if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active"); // Changed to 'active' to match CSS
+            link.classList.add("active"); 
         }
     });
     
@@ -38,5 +36,42 @@ document.addEventListener("DOMContentLoaded", function () {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
+    }
+
+    // --- 4. FORM STATUS NOTIFICATIONS ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
+    const statusDiv = document.getElementById('form-status');
+
+    if (status && statusDiv) {
+        statusDiv.className = ""; 
+        statusDiv.style.padding = "10px";
+        statusDiv.style.marginBottom = "15px";
+        statusDiv.style.borderRadius = "5px";
+        statusDiv.style.fontWeight = "bold";
+        statusDiv.style.textAlign = "center"; // Optional: centers the status text
+
+        switch (status) {
+            case 'success':
+                statusDiv.innerText = "Message sent successfully!";
+                statusDiv.style.backgroundColor = "#d4edda";
+                statusDiv.style.color = "#155724";
+                break;
+            case 'empty':
+                statusDiv.innerText = "Please fill in all fields.";
+                statusDiv.style.backgroundColor = "#f8d7da";
+                statusDiv.style.color = "#721c24";
+                break;
+            case 'invalidemail':
+                statusDiv.innerText = "Please enter a valid email address.";
+                statusDiv.style.backgroundColor = "#f8d7da";
+                statusDiv.style.color = "#721c24";
+                break;
+            case 'error':
+                statusDiv.innerText = "A database error occurred. Please try again later.";
+                statusDiv.style.backgroundColor = "#f8d7da";
+                statusDiv.style.color = "#721c24";
+                break;
+        }
     }
 });
